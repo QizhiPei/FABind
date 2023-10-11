@@ -8,11 +8,10 @@ FABind: Fast and Accurate Protein-Ligand Binding 🔥
 [![](https://img.shields.io/badge/-github-green?style=plastic&logo=github)](https://github.com/QizhiPei/FABind) 
 </div>
 
-![](./imgs/pipeline.png)
-
 ## Overview
 This repository contains the source code for *Neurips 2023* paper: [FABind: Fast and Accurate Protein-Ligand Binding](https://arxiv.org/abs/2310.06763). FABind achieves accurate docking performance with high speed compared to recent baselines. If you have questions, don't hesitate to open an issue or ask me via <qizhipei@ruc.edu.cn>, Kaiyuan Gao <im_kai@hust.edu.cn>, or Lijun Wu via <lijuwu@microsoft.com>. We are happy to hear from you!
 
+![](./imgs/pipeline.png)
 
 ## News
 **Oct 11 2023**: Initial commits. More codes, pre-trained model, and data are coming soon.
