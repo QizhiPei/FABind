@@ -4,14 +4,14 @@ FABind: Fast and Accurate Protein-Ligand Binding 🔥
 
 <div align="center">
 
-[![](https://img.shields.io/badge/paper-pink?style=plastic&logo=GitBook)](https://github.com/QizhiPei/FABind)
+[![](https://img.shields.io/badge/paper-pink?style=plastic&logo=GitBook)](https://arxiv.org/abs/2310.06763)
 [![](https://img.shields.io/badge/-github-green?style=plastic&logo=github)](https://github.com/QizhiPei/FABind) 
 </div>
 
 ![](./imgs/pipeline.png)
 
 ## Overview
-This repository contains the source code for *Neurips 2023* paper: [FABind: Fast and Accurate Protein-Ligand Binding](https://github.com/QizhiPei/FABind). FABind achieves accurate docking performance with high speed compared to recent baselines. If you have questions, don't hesitate to open an issue or ask me via <qizhipei@ruc.edu.cn>, Kaiyuan Gao <im_kai@hust.edu.cn>, or Lijun Wu via <lijuwu@microsoft.com>. We are happy to hear from you!
+This repository contains the source code for *Neurips 2023* paper: [FABind: Fast and Accurate Protein-Ligand Binding](https://arxiv.org/abs/2310.06763). FABind achieves accurate docking performance with high speed compared to recent baselines. If you have questions, don't hesitate to open an issue or ask me via <qizhipei@ruc.edu.cn>, Kaiyuan Gao <im_kai@hust.edu.cn>, or Lijun Wu via <lijuwu@microsoft.com>. We are happy to hear from you!
 
 
 ## News
@@ -88,5 +88,18 @@ python fabind/main_fabind.py \
     --use-esm2-feat
 ```
 
-## Reference
-Coming soon...
+## About
+### References
+```
+@misc{pei2023fabind,
+      title={FABind: Fast and Accurate Protein-Ligand Binding}, 
+      author={Qizhi Pei and Kaiyuan Gao and Lijun Wu and Jinhua Zhu and Yingce Xia and Shufang Xie and Tao Qin and Kun He and Tie-Yan Liu and Rui Yan},
+      year={2023},
+      eprint={2310.06763},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+```
+
+### Acknowledegments
+We appreciate [EquiBind](https://github.com/HannesStark/EquiBind), [TankBind](https://github.com/luwei0917/TankBind), [E3Bind](https://openreview.net/forum?id=sO1QiAftQFv), [DiffDock](https://github.com/gcorso/DiffDock) and other related works for their open-source contributions.
