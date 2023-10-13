@@ -5,7 +5,8 @@ FABind: Fast and Accurate Protein-Ligand Binding 🔥
 <div align="center">
 
 [![](https://img.shields.io/badge/paper-pink?style=plastic&logo=GitBook)](https://arxiv.org/abs/2310.06763)
-[![](https://img.shields.io/badge/-github-green?style=plastic&logo=github)](https://github.com/QizhiPei/FABind) 
+[![](https://img.shields.io/badge/-github-green?style=plastic&logo=github)](https://github.com/QizhiPei/FABind)
+[![](https://img.shields.io/badge/poster-blue?style=plastic&logo=googleslides)](https://neurips.cc/virtual/2023/poster/71739)
 </div>
 
 ## Overview
