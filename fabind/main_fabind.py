@@ -556,15 +556,17 @@ for epoch in range(last_epoch+1, args.total_epochs):
     # use_y_mask = args.use_equivalent_native_y_mask or args.use_y_mask
     use_y_mask = False
 
-    if not args.disable_validate:
-        metrics = evaluate_mean_pocket_cls_coord_multi_task(accelerator, args, valid_loader, model, com_coord_criterion, criterion, pocket_cls_criterion, pocket_coord_criterion, args.relative_k,
-                                                            device, pred_dis=pred_dis, use_y_mask=use_y_mask, stage=1)
+    logger.log_message(f"Begin validation")
+    if accelerator.is_main_process:
+        if not args.disable_validate:
+            metrics = evaluate_mean_pocket_cls_coord_multi_task(accelerator, args, valid_loader, model, com_coord_criterion, criterion, pocket_cls_criterion, pocket_coord_criterion, args.relative_k,
+                                                                device, pred_dis=pred_dis, use_y_mask=use_y_mask, stage=1)
 
-        # valid_metrics_list.append(metrics)
-        # logger.log_message(f"epoch {epoch:<4d}, valid, " + print_metrics(metrics))
-        logger.log_stats(metrics, epoch, args, prefix="Valid")
+            # valid_metrics_list.append(metrics)
+            # logger.log_message(f"epoch {epoch:<4d}, valid, " + print_metrics(metrics))
+            logger.log_stats(metrics, epoch, args, prefix="Valid")
 
-        metrics_runtime_no_prefix(metrics, valid_writer, epoch)
+            metrics_runtime_no_prefix(metrics, valid_writer, epoch)
     
     logger.log_message(f"Begin test")
     if accelerator.is_main_process:

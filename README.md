@@ -57,7 +57,8 @@ Coming soon...
 ```shell
 data_path=path_to_your_downloaded_data
 
-python fabind/main_fabind.py \
+python -c "from accelerate.utils import write_basic_config; write_basic_config(mixed_precision='fp16')"
+accelerate launch fabind/main_fabind.py \
     --batch_size 12 \
     -d 0 \
     -m 5 \
@@ -75,6 +76,7 @@ python fabind/main_fabind.py \
     --pocket-distance-loss-weight 0.05 \
     --lr 5e-05 --lr-scheduler poly_decay \
     --distmap-pred mlp \
+    --hidden-size 512 --pocket-pred-hidden-size 128 \
     --n-iter 8 --mean-layers 4 \
     --refine refine_coord \
     --coordinate-scale 5 \
