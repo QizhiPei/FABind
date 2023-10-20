@@ -106,13 +106,11 @@ accelerate launch fabind/main_fabind.py \
 ## About
 ### Citations
 ```
-@misc{pei2023fabind,
-      title={FABind: Fast and Accurate Protein-Ligand Binding}, 
-      author={Qizhi Pei and Kaiyuan Gao and Lijun Wu and Jinhua Zhu and Yingce Xia and Shufang Xie and Tao Qin and Kun He and Tie-Yan Liu and Rui Yan},
-      year={2023},
-      eprint={2310.06763},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
+@article{pei2023fabind,
+  title={FABind: Fast and Accurate Protein-Ligand Binding},
+  author={Pei, Qizhi and Gao, Kaiyuan and Wu, Lijun and Zhu, Jinhua and Xia, Yingce and Xie, Shufang and Qin, Tao and He, Kun and Liu, Tie-Yan and Yan, Rui},
+  journal={arXiv preprint arXiv:2310.06763},
+  year={2023}
 }
 ```
 
