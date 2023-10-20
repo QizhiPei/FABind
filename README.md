@@ -43,15 +43,15 @@ The PDBbind 2020 dataset can be download from http://www.pdbbind.org.cn. We then
 We also provided processed dataset on [zenodo](https://zenodo.org/records/10021618).
 If you want to train FABind from scratch, or reproduce the FABind results, you can:
 1. download dataset from [zenodo](https://zenodo.org/records/10021618)
-2. unzip the `zip` file and place it into `data_path`
+2. unzip the `zip` file and place it into `data_path` such that `data_path=pdbbind2020`
 
 ## Model
 The pre-trained model is placed at `ckpt/best_model.bin`.
 
 ## Evaluation
 ```shell
-data_path=path_to_your_downloaded_data
-ckpt=path_to_your_downloaded_ckpt
+data_path=pdbbind2020
+ckpt=ckpt/best_model.bin
 
 python fabind/test_fabind.py \
     --batch_size 4 \
@@ -67,9 +67,10 @@ Coming soon...
 
 ## Re-training
 ```shell
-data_path=path_to_your_downloaded_data
-
+data_path=pdbbind_2020
+# write the default accelerate settings
 python -c "from accelerate.utils import write_basic_config; write_basic_config(mixed_precision='no')"
+# "accelerate launch" will run the experiments in multi-gpu if applicable 
 accelerate launch fabind/main_fabind.py \
     --batch_size 12 \
     -d 0 \
@@ -103,7 +104,7 @@ accelerate launch fabind/main_fabind.py \
 ```
 
 ## About
-### References
+### Citations
 ```
 @misc{pei2023fabind,
       title={FABind: Fast and Accurate Protein-Ligand Binding}, 
