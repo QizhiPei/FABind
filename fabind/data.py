@@ -41,7 +41,7 @@ class FABindDataSet(Dataset):
     
     @property
     def processed_file_names(self):
-        return ['data.pt', 'protein.lmdb', 'compound_LAS_edge_index.lmdb', 'compound_rdkit_coords.pt', 'esm2_t33_650M_UR50D.lmdb']
+        return ['data.pt', 'protein_1d_3d.lmdb', 'compound_LAS_edge_index.lmdb', 'compound_rdkit_coords.pt', 'esm2_t33_650M_UR50D.lmdb']
 
     def len(self):
         return len(self.data)
@@ -69,7 +69,7 @@ class FABindDataSet(Dataset):
         protein_name = line['protein_name'] # pdb id
         if self.proteinMode == 0:
             with self.protein_dict.begin() as txn:
-                protein_node_xyz, protein_seq, protein_node_s, protein_node_v, protein_edge_index, protein_edge_s, protein_edge_v = pickle.loads(txn.get(protein_name.encode()))
+                protein_node_xyz, protein_seq= pickle.loads(txn.get(protein_name.encode()))
             if self.use_esm2_feat:
                 with self.protein_esm2_feat.begin() as txn:
                     protein_esm2_feat = pickle.loads(txn.get(protein_name.encode()))
@@ -83,9 +83,8 @@ class FABindDataSet(Dataset):
             coords, compound_node_features, input_atom_edge_list, input_atom_edge_attr_list, pair_dis_distribution, LAS_edge_index = pickle.loads(txn.get(name.encode()))
 
         if self.proteinMode == 0:
-            data, input_node_list, keepNode = construct_data_from_graph_gvp_mean(self.args, protein_node_xyz, protein_seq, protein_node_s, 
-                                  protein_node_v, protein_edge_index, protein_edge_s, protein_edge_v,
-                                  coords, compound_node_features, input_atom_edge_list, input_atom_edge_attr_list, LAS_edge_index, rdkit_coords, compound_coords_init_mode=self.compound_coords_init_mode, contactCutoff=self.contactCutoff, includeDisMap=self.predDis,
+            data, input_node_list, keepNode = construct_data_from_graph_gvp_mean(self.args, protein_node_xyz, protein_seq, 
+                                coords, compound_node_features, input_atom_edge_list, input_atom_edge_attr_list, LAS_edge_index, rdkit_coords, compound_coords_init_mode=self.compound_coords_init_mode, contactCutoff=self.contactCutoff, includeDisMap=self.predDis,
                                 pocket_radius=self.pocket_radius, add_noise_to_com=add_noise_to_com, use_whole_protein=use_whole_protein, pdb_id=name, group=group, seed=self.seed, data_path=self.pre, 
                                 use_compound_com_as_pocket=use_compound_com, chosen_pocket_com=pocket_com, compoundMode=self.compoundMode, random_rotation=random_rotation, pocket_idx_no_noise=self.pocket_idx_no_noise,
                                 protein_esm2_feat=protein_esm2_feat)

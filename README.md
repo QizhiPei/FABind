@@ -57,7 +57,7 @@ Coming soon...
 ```shell
 data_path=path_to_your_downloaded_data
 
-python -c "from accelerate.utils import write_basic_config; write_basic_config(mixed_precision='fp16')"
+python -c "from accelerate.utils import write_basic_config; write_basic_config(mixed_precision='no')"
 accelerate launch fabind/main_fabind.py \
     --batch_size 12 \
     -d 0 \

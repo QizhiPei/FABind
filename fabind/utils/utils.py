@@ -199,8 +199,7 @@ def SetDihedral(conf, atom_idx, new_vale):
         conf, atom_idx[0], atom_idx[1], atom_idx[2], atom_idx[3], new_vale
     )
 
-def construct_data_from_graph_gvp_mean(args, protein_node_xyz, protein_seq, protein_node_s, 
-                                  protein_node_v, protein_edge_index, protein_edge_s, protein_edge_v,
+def construct_data_from_graph_gvp_mean(args, protein_node_xyz, protein_seq,
                                  coords, compound_node_features, input_atom_edge_list, 
                                  input_atom_edge_attr_list, LAS_edge_index, rdkit_coords, compound_coords_init_mode='pocket_center_rdkit', includeDisMap=True, pdb_id=None, group='train', seed=42, data_path=None, contactCutoff=8.0, pocket_radius=20, interactionThresholdDistance=10, compoundMode=1, 
                                  add_noise_to_com=None, use_whole_protein=False, use_compound_com_as_pocket=True, chosen_pocket_com=None, random_rotation=False, pocket_idx_no_noise=True, protein_esm2_feat=None):
@@ -246,33 +245,11 @@ def construct_data_from_graph_gvp_mean(args, protein_node_xyz, protein_seq, prot
     # data.y = torch.tensor(y_contact, dtype=torch.float).flatten() # whether the distance between ligand and protein is less than 8A.
 
     # pocket information
-    # data.seq = protein_seq[keepNode]
-    # data['protein'].node_s = protein_node_s[keepNode] # [num_protein_nodes, num_protein_feautre]
-    # data['protein'].node_v = protein_node_v[keepNode]
-    # data['protein', 'p2p', 'protein'].edge_index = input_edge_idx
-    # data['protein', 'p2p', 'protein'].edge_s = input_protein_edge_s
-    # data['protein', 'p2p', 'protein'].edge_v = input_protein_edge_v
     if torch.is_tensor(protein_esm2_feat):
         data['pocket'].node_feats = protein_esm2_feat[keepNode]
     else:
-        data['pocket'].node_feats = torch.cat(
-            (
-                protein_node_v[keepNode].reshape(protein_node_v[keepNode].shape[0], -1), 
-                protein_node_s[keepNode]
-            ), dim=1).float()
-    if args.esm2_concat_raw:
-        data['pocket'].node_feats = torch.cat(
-            (
-                protein_esm2_feat[keepNode], 
-                torch.cat(
-                    (
-                        protein_node_v[keepNode].reshape(protein_node_v[keepNode].shape[0], -1), 
-                        protein_node_s[keepNode]
-                    ), dim=1).float()
-            ), dim=-1)
-    # if pocket_idx_no_noise:
-    #     data['pocket'].keepNode = torch.tensor(keepNode_no_noise, dtype=torch.int)
-    # else:
+        raise ValueError("protein_esm2_feat should be a tensor")
+
     data['pocket'].keepNode = torch.tensor(keepNode, dtype=torch.bool)
     
     data['compound'].node_feats = compound_node_features.float()
@@ -456,29 +433,11 @@ def construct_data_from_graph_gvp_mean(args, protein_node_xyz, protein_seq, prot
         data.pocket_idx = torch.tensor(keepNode_no_noise, dtype=torch.int)
     else:
         data.pocket_idx = torch.tensor(keepNode, dtype=torch.int)
-    # data['protein_whole'].node_s = protein_node_s
-    # data['protein_whole'].node_v = protein_node_v
-    # data['protein_whole', 'p2p', 'protein_whole'].edge_index = protein_edge_index
-    # data['protein_whole', 'p2p', 'protein_whole'].edge_s = protein_edge_s
-    # data['protein_whole', 'p2p', 'protein_whole'].edge_v = protein_edge_v
+
     if torch.is_tensor(protein_esm2_feat):
         data['protein_whole'].node_feats = protein_esm2_feat
     else:
-        data['protein_whole'].node_feats = torch.cat(
-            (
-                protein_node_v.reshape(protein_node_v.shape[0], -1), 
-                protein_node_s
-            ), dim=1).float()
-    if args.esm2_concat_raw:
-        data['protein_whole'].node_feats = torch.cat(
-            (
-                protein_esm2_feat, 
-                torch.cat(
-                (
-                    protein_node_v.reshape(protein_node_v.shape[0], -1), 
-                    protein_node_s
-                ), dim=1).float()
-            ), dim=-1)
+        raise ValueError("protein_esm2_feat should be a tensor")
 
     return data, input_node_xyz, keepNode
 
