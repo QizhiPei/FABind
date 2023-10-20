@@ -4,9 +4,11 @@ FABind: Fast and Accurate Protein-Ligand Binding 🔥
 
 <div align="center">
 
-[![](https://img.shields.io/badge/paper-pink?style=plastic&logo=GitBook)](https://arxiv.org/abs/2310.06763)
-[![](https://img.shields.io/badge/-github-green?style=plastic&logo=github)](https://github.com/QizhiPei/FABind)
+[![](https://img.shields.io/badge/paper-arxiv-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2310.06763)
+[![](https://img.shields.io/badge/github-green?style=plastic&logo=github)](https://github.com/QizhiPei/FABind)
 [![](https://img.shields.io/badge/poster-blue?style=plastic&logo=googleslides)](https://neurips.cc/virtual/2023/poster/71739)
+[![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://github.com/QizhiPei/FABind/ckpt) 
+[![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/10021618)
 </div>
 
 ## Overview
@@ -15,6 +17,8 @@ This repository contains the source code for *Neurips 2023* paper "[FABind: Fast
 ![](./imgs/pipeline.png)
 
 ## News
+**Oct 10 2023**: The trained FABind model and processed dataset are released!
+
 **Oct 11 2023**: Initial commits. More codes, pre-trained model, and data are coming soon.
 
 ## Setup Environment
@@ -35,6 +39,11 @@ pip install torchdrug==0.1.2 rdkit torchmetrics==0.10.2 tqdm mlcrate pyarrow acc
 
 ## Data
 The PDBbind 2020 dataset can be download from http://www.pdbbind.org.cn. We then follow the same data processing as [TankBind](https://github.com/luwei0917/TankBind/blob/main/examples/construction_PDBbind_training_and_test_dataset.ipynb).
+
+We also provided processed dataset on [zenodo](https://zenodo.org/records/10021618).
+If you want to train FABind from scratch, or reproduce the FABind results, you can:
+1. download dataset from [zenodo](https://zenodo.org/records/10021618)
+2. unzip the `zip` file and place it into `data_path`
 
 ## Evaluation
 ```shell
