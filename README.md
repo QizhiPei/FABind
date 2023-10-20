@@ -7,7 +7,7 @@ FABind: Fast and Accurate Protein-Ligand Binding 🔥
 [![](https://img.shields.io/badge/paper-arxiv-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2310.06763)
 [![](https://img.shields.io/badge/github-green?style=plastic&logo=github)](https://github.com/QizhiPei/FABind)
 [![](https://img.shields.io/badge/poster-blue?style=plastic&logo=googleslides)](https://neurips.cc/virtual/2023/poster/71739)
-[![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://github.com/QizhiPei/FABind/ckpt) 
+[![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://github.com/QizhiPei/FABind/tree/main/ckpt) 
 [![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/10021618)
 </div>
 
@@ -44,6 +44,9 @@ We also provided processed dataset on [zenodo](https://zenodo.org/records/100216
 If you want to train FABind from scratch, or reproduce the FABind results, you can:
 1. download dataset from [zenodo](https://zenodo.org/records/10021618)
 2. unzip the `zip` file and place it into `data_path`
+
+## Model
+The pre-trained model is placed at `ckpt/best_model.bin`.
 
 ## Evaluation
 ```shell
