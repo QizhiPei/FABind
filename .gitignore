@@ -165,4 +165,5 @@ get_results.py
 
 .vscode
 ckpts
-fabind/tools
+fabind/tools/lmdb*
+fabind/tools/load_esm2_t33.py

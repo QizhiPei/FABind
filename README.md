@@ -34,7 +34,8 @@ pip install https://data.pyg.org/whl/torch-1.12.0%2Bcu113/torch_sparse-0.6.15%2B
 pip install https://data.pyg.org/whl/torch-1.12.0%2Bcu113/torch_spline_conv-1.2.1%2Bpt112cu113-cp38-cp38-linux_x86_64.whl
 pip install https://data.pyg.org/whl/torch-1.12.0%2Bcu113/pyg_lib-0.2.0%2Bpt112cu113-cp38-cp38-linux_x86_64.whl
 pip install torch-geometric
-pip install torchdrug==0.1.2 rdkit torchmetrics==0.10.2 tqdm mlcrate pyarrow accelerate Bio lmdb fair-esm tensorboard 
+pip install torchdrug==0.1.2 rdkit torchmetrics==0.10.2 tqdm mlcrate pyarrow accelerate Bio lmdb fair-esm tensorboard
+pip install fair-esm
 ```
 
 ## Data
@@ -44,6 +45,15 @@ We also provided processed dataset on [zenodo](https://zenodo.org/records/100216
 If you want to train FABind from scratch, or reproduce the FABind results, you can:
 1. download dataset from [zenodo](https://zenodo.org/records/10021618)
 2. unzip the `zip` file and place it into `data_path` such that `data_path=pdbbind2020`
+
+### Generate the ESM2 embeddings for the proteins
+Before training or evaluation, you need to first generate the ESM2 embeddings for the proteins based on the preprocessed data above.
+```shell
+data_path=pdbbind2020
+
+python fabind/tools/generate_esm2_t33.py ${data_path}
+```
+Then the ESM2 embedings will be saved at `${data_path}/esm2_t33_650M_UR50D.lmdb`.
 
 ## Model
 The pre-trained model is placed at `ckpt/best_model.bin`.
