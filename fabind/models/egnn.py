@@ -308,8 +308,7 @@ class MC_Att_L(nn.Module):
     def forward(self, h, edge_index, coord, edge_attr=None, segment_id=None, batch_id=None,
                  reduced_tuple=None, pair_embed_batched=None, pair_mask=None, LAS_mask=None,
                  p_p_dist_embed=None, c_c_dist_embed=None):
-        radial, coord_diff = coord2radial(edge_index, coord, self.args.rm_F_norm, batch_id=batch_id, norm_type=self.args.norm_type)
-        
+        # Cross-attention
         if self.args.add_attn_pair_bias:
             h, pair_embed_batched, pair_offset_embed = self.trio_encoder(
                 h, edge_index, coord, pair_embed_batched=pair_embed_batched, pair_mask=pair_mask, 
@@ -318,7 +317,9 @@ class MC_Att_L(nn.Module):
             )
         else:
             pair_offset_embed = None
-
+        
+        # Interfacial 
+        radial, coord_diff = coord2radial(edge_index, coord, self.args.rm_F_norm, batch_id=batch_id, norm_type=self.args.norm_type)
         att_weight, v = self.att_model(h, edge_index, radial, edge_attr, pair_embed=pair_offset_embed)
 
         # print_log(f'att_weight, {torch.isnan(att_weight).sum()}', level='DEBUG')
