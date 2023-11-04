@@ -4,11 +4,13 @@ FABind: Fast and Accurate Protein-Ligand Binding 🔥
 
 <div align="center">
 
-[![](https://img.shields.io/badge/paper-arxiv-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2310.06763)
+[![](https://img.shields.io/badge/paper-arxiv2310.06763-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2310.06763)
 [![](https://img.shields.io/badge/github-green?style=plastic&logo=github)](https://github.com/QizhiPei/FABind)
 [![](https://img.shields.io/badge/poster-blue?style=plastic&logo=googleslides)](https://neurips.cc/virtual/2023/poster/71739)
 [![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://github.com/QizhiPei/FABind/tree/main/ckpt) 
 [![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/10021618)
+[![](https://img.shields.io/badge/PyTorch-1.12+-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
+
 </div>
 
 ## Overview
@@ -121,6 +123,15 @@ accelerate launch fabind/main_fabind.py \
   author={Pei, Qizhi and Gao, Kaiyuan and Wu, Lijun and Zhu, Jinhua and Xia, Yingce and Xie, Shufang and Qin, Tao and He, Kun and Liu, Tie-Yan and Yan, Rui},
   journal={arXiv preprint arXiv:2310.06763},
   year={2023}
+}
+
+@inproceedings{
+pei2023fabind,
+title={{FAB}ind: Fast and Accurate Protein-Ligand Binding},
+author={Qizhi Pei and Kaiyuan Gao and Lijun Wu and Jinhua Zhu and Yingce Xia and Shufang Xie and Tao Qin and Kun He and Tie-Yan Liu and Rui Yan},
+booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+year={2023},
+url={https://openreview.net/forum?id=PnWakgg1RL}
 }
 ```
 
