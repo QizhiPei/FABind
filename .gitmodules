@@ -1,0 +1,3 @@
+[submodule "ckpt"]
+	path = ckpt
+	url = https://huggingface.co/QizhiPei/FABind_model
