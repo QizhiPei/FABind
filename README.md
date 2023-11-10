@@ -69,7 +69,7 @@ The pre-trained model is placed at `ckpt/best_model.bin`.
 ## Evaluation
 ```shell
 data_path=pdbbind2020
-ckpt=ckpt/best_model.bin
+ckpt_path=ckpt/best_model.bin
 
 python fabind/test_fabind.py \
     --batch_size 4 \

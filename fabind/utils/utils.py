@@ -268,7 +268,7 @@ def construct_data_from_graph_gvp_mean(args, protein_node_xyz, protein_seq,
         if group == 'test':
             from accelerate.utils import set_seed
             set_seed(seed)
-            pre = "/home/v-peiqizhi/data/pdbbind2020"
+            pre = args.data_path
             mol, _ = read_mol(f"{pre}/renumber_atom_index_same_as_smiles/{pdb_id}.sdf", None)
             rotable_bonds = get_torsions(mol)
             values = 3.1415926 * 2 * np.random.rand(len(rotable_bonds))

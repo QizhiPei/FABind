@@ -31,8 +31,6 @@ with protein_db.begin(write=False) as txn:
         count += 1
 print(count)
 
-# test_pdb_ids = [line.strip() for line in open('/home/v-peiqizhi/FABind/split_pdb_id/test_index')]
-
 with protein_db.begin(write=False) as txn:
     with protein_esm2_db.begin(write=True) as txn_esm2:
         cursor = txn.cursor()
