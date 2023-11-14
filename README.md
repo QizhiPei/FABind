@@ -31,7 +31,8 @@ This is an example for how to set up a working conda environment to run the code
 **As the trained model checkpoint is included in the HuggingFace repository with git-lfs, you need to install git-lfs to pull the data correctly.**
 
 ```shell
-apt-get install git-lfs # run this if you have not installed git-lfs
+sudo apt-get install git-lfs # run this if you have not installed git-lfs
+git lfs install
 git clone https://github.com/QizhiPei/FABind.git --recursive
 conda create --name fabind python=3.8
 conda activate fabind
