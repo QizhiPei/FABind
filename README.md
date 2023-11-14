@@ -91,7 +91,7 @@ data_path=pdbbind_2020
 python -c "from accelerate.utils import write_basic_config; write_basic_config(mixed_precision='no')"
 # "accelerate launch" will run the experiments in multi-gpu if applicable 
 accelerate launch fabind/main_fabind.py \
-    --batch_size 12 \
+    --batch_size 3 \
     -d 0 \
     -m 5 \
     --data-path $data_path \
