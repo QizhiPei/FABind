@@ -63,7 +63,7 @@ data_path=pdbbind2020
 
 python fabind/tools/generate_esm2_t33.py ${data_path}
 ```
-Then the ESM2 embedings will be saved at `${data_path}/esm2_t33_650M_UR50D.lmdb`.
+Then the ESM2 embedings will be saved at `${data_path}/dataset/processed/esm2_t33_650M_UR50D.lmdb`.
 
 ## Model
 The pre-trained model is placed at `ckpt/best_model.bin`.
