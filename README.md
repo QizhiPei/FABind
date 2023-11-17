@@ -34,7 +34,7 @@ This is an example of how to set up a working conda environment to run the code.
 ```shell
 sudo apt-get install git-lfs # run this if you have not installed git-lfs
 git lfs install
-git clone https://github.com/QizhiPei/FABind.git --recursive  # You can also manually download the pre-trained model from https://huggingface.co/QizhiPei/FABind_model/tree/main
+git clone https://github.com/QizhiPei/FABind.git --recursive
 conda create --name fabind python=3.8
 conda activate fabind
 conda install pytorch==1.12.0 torchvision==0.13.0 torchaudio==0.12.0 cudatoolkit=11.3 -c pytorch
@@ -47,6 +47,8 @@ pip install torch-geometric
 pip install torchdrug==0.1.2 rdkit torchmetrics==0.10.2 tqdm mlcrate pyarrow accelerate Bio lmdb fair-esm tensorboard
 pip install fair-esm
 ```
+
+You can also manually download the pre-trained model from https://huggingface.co/QizhiPei/FABind_model/tree/main.
 
 ## Data
 The PDBbind 2020 dataset can be download from http://www.pdbbind.org.cn. We then follow the same data processing as [TankBind](https://github.com/luwei0917/TankBind/blob/main/examples/construction_PDBbind_training_and_test_dataset.ipynb).
