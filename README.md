@@ -27,14 +27,14 @@ This repository contains the source code for *NeurIPS 2023* paper "[FABind: Fast
 **Oct 11 2023**: Initial commits. More codes, pre-trained model, and data are coming soon.
 
 ## Setup Environment
-This is an example for how to set up a working conda environment to run the code. In this example, we have cuda version==11.3, and we install torch==1.12.0. To make sure the pyg packages are installed correctely, we directly install them from whl.
+This is an example of how to set up a working conda environment to run the code. In this example, we have cuda version==11.3, and we install torch==1.12.0. To make sure the pyg packages are installed correctely, we directly install them from whl.
 
 **As the trained model checkpoint is included in the HuggingFace repository with git-lfs, you need to install git-lfs to pull the data correctly.**
 
 ```shell
 sudo apt-get install git-lfs # run this if you have not installed git-lfs
 git lfs install
-git clone https://github.com/QizhiPei/FABind.git --recursive
+git clone https://github.com/QizhiPei/FABind.git --recursive  # You can also manually download the pre-trained model from https://huggingface.co/QizhiPei/FABind_model/tree/main
 conda create --name fabind python=3.8
 conda activate fabind
 conda install pytorch==1.12.0 torchvision==0.13.0 torchaudio==0.12.0 cudatoolkit=11.3 -c pytorch
