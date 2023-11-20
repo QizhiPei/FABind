@@ -3,7 +3,7 @@ import argparse
 import os
 from utils.inference_mol_utils import read_smiles, extract_torchdrug_feature_from_mol, generate_conformation
 import pandas as pd
-import mlcrate as mlc
+from multiprocessing import Pool
 
 parser = argparse.ArgumentParser(description='Preprocess molecules.')
 parser.add_argument("--index_csv", type=str, default="../inference_examples/test.csv",
@@ -23,8 +23,6 @@ for line in content[1:]:
     info.append([smiles, pdb])
 info = pd.DataFrame(info, columns=['smiles', 'pdb'])
 
-mol_info_list = []
-mol_list = []
 def get_mol_info(idx):
     try:
         smiles = info.iloc[idx].smiles
@@ -37,8 +35,7 @@ def get_mol_info(idx):
         print('Failed to read molecule id ', idx, ' We are skipping it. The reason is the exception: ', e)
         
 idx = [i for i in range(len(info))]
-pool = mlc.SuperPool(args.num_threads)
-pool.pool.restart()
-_ = pool.map(get_mol_info, idx)
-pool.exit()
+
+with Pool(processes=args.num_threads) as p:
+    _ = p.map(get_mol_info, idx)
 

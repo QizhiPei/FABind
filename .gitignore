@@ -167,3 +167,5 @@ get_results.py
 ckpts
 fabind/tools/lmdb*
 fabind/tools/load_esm2_t33.py
+inference_examples/temp_files
+inference_examples/inference_output

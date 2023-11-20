@@ -88,9 +88,9 @@ python fabind/test_fabind.py \
 Here are the scripts available for inference with smiles and according pdb files.
 
 The following script iteratively runs:
-- Given smiles in `INDEX_CSV`, preprocess molecules with `NUM_THREADS` multiprocessing and save each processed molecule to `[PROCESSED_DIR]/mol`.
-- Given protein pdb files in `PDB_FILE_DIR`, preprocess protein information and save it to `[PROCESSED_DIR]/processed_protein.pt`.
-- Load model checkpoint in `EVAL_DIR`, save the predicted molecule conformation in `OUTPUT_DIR`. Another csv file in `OUTPUT_DIR` indicates the smiles and according filename.
+- Given smiles in `index_csv`, preprocess molecules with `num_threads` multiprocessing and save each processed molecule to `[save_pt_dir]/mol`.
+- Given protein pdb files in `pdb_file_dir`, preprocess protein information and save it to `[save_pt_dir]/processed_protein.pt`.
+- Load model checkpoint in `ckpt_path`, save the predicted molecule conformation in `output_dir`. Another csv file in `output_dir` indicates the smiles and according filename.
 
 ```shell
 index_csv=../inference_examples/example.csv
