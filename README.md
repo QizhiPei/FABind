@@ -48,8 +48,6 @@ pip install torchdrug==0.1.2 rdkit torchmetrics==0.10.2 tqdm mlcrate pyarrow acc
 pip install fair-esm
 ```
 
-You can also manually download the pre-trained model from https://huggingface.co/QizhiPei/FABind_model/tree/main.
-
 ## Data
 The PDBbind 2020 dataset can be download from http://www.pdbbind.org.cn. We then follow the same data processing as [TankBind](https://github.com/luwei0917/TankBind/blob/main/examples/construction_PDBbind_training_and_test_dataset.ipynb).
 
@@ -68,7 +66,9 @@ python fabind/tools/generate_esm2_t33.py ${data_path}
 Then the ESM2 embedings will be saved at `${data_path}/dataset/processed/esm2_t33_650M_UR50D.lmdb`.
 
 ## Model
-The pre-trained model is placed at `ckpt/best_model.bin`.
+The pre-trained model is placed at `ckpt/best_model.bin`, which will be automatically downloaded when cloning this reporsitory with `--recursive`. 
+
+You can also manually download the pre-trained model from https://huggingface.co/QizhiPei/FABind_model/tree/main.
 
 ## Evaluation
 ```shell
@@ -88,8 +88,8 @@ python fabind/test_fabind.py \
 Here are the scripts available for inference with smiles and according pdb files.
 
 The following script iteratively runs:
-- Given smiles in `index_csv`, preprocess molecules with `num_threads` multiprocessing and save each processed molecule to `[save_pt_dir]/mol`.
-- Given protein pdb files in `pdb_file_dir`, preprocess protein information and save it to `[save_pt_dir]/processed_protein.pt`.
+- Given smiles in `index_csv`, preprocess molecules with `num_threads` multiprocessing and save each processed molecule to `{save_pt_dir}/mol`.
+- Given protein pdb files in `pdb_file_dir`, preprocess protein information and save it to `{save_pt_dir}/processed_protein.pt`.
 - Load model checkpoint in `ckpt_path`, save the predicted molecule conformation in `output_dir`. Another csv file in `output_dir` indicates the smiles and according filename.
 
 ```shell
