@@ -85,7 +85,44 @@ python fabind/test_fabind.py \
 ```
 
 ## Inference on Custom Complexes
-Coming soon...
+Here are the scripts available for inference with smiles and according pdb files.
+
+The following script iteratively runs:
+- Given smiles in `INDEX_CSV`, preprocess molecules with `NUM_THREADS` multiprocessing and save each processed molecule to `[PROCESSED_DIR]/mol`.
+- Given protein pdb files in `PDB_FILE_DIR`, preprocess protein information and save it to `[PROCESSED_DIR]/processed_protein.pt`.
+- Load model checkpoint in `EVAL_DIR`, save the predicted molecule conformation in `OUTPUT_DIR`. Another csv file in `OUTPUT_DIR` indicates the smiles and according filename.
+
+```shell
+index_csv=../inference_examples/example.csv
+pdb_file_dir=../inference_examples/pdb_files
+num_threads=1
+save_pt_dir=../inference_examples/temp_files
+save_mols_dir=${save_pt_dir}/mol
+ckpt_path=../ckpt/best_model.bin
+output_dir=../inference_examples/inference_output
+
+cd fabind
+
+echo "======  preprocess molecules  ======"
+python inference_preprocess_mol_confs.py --index_csv ${index_csv} --save_mols_dir ${save_mols_dir} --num_threads ${num_threads}
+
+echo "======  preprocess proteins  ======"
+python inference_preprocess_protein.py --pdb_file_dir ${pdb_file_dir} --save_pt_dir ${save_pt_dir}
+
+echo "======  inference begins  ======"
+python fabind_inference.py \
+    --ckpt ${ckpt_path} \
+    --batch_size 4 \
+    --seed 128 \
+    --test-gumbel-soft \
+    --redocking \
+    --post-optim \
+    --write-mol-to-file \
+    --sdf-output-path-post-optim ${output_dir} \
+    --index-csv ${index_csv} \
+    --preprocess-dir ${save_pt_dir}
+```
+
 
 ## Re-training
 ```shell
