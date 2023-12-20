@@ -132,7 +132,7 @@ def generate_conformation(mol):
     ps = AllChem.ETKDGv2()
     try:
         rid = AllChem.EmbedMolecule(mol, ps)
-        AllChem.MMFFOptimizeMolecule(mol, maxIters=500, confId=0)
+        AllChem.MMFFOptimizeMolecule(mol, confId=0)
     except:
         mol.Compute2DCoords()
     mol = Chem.RemoveHs(mol)

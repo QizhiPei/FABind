@@ -222,6 +222,13 @@ logger.log_message(f"data point train: {len(train)}, valid: {len(valid)}, test: 
 num_workers = 10
 
 test_loader = DataLoader(test, batch_size=args.batch_size, follow_batch=['x', 'compound_pair'], shuffle=False, pin_memory=False, num_workers=num_workers)
+test_unseen_pdb_list = [line.strip() for line in open('split_pdb_id/unseen_test_index')]
+
+test_unseen_index = test.data.query("(group =='test') and (pdb in @test_unseen_pdb_list)").index.values
+# double check
+test_unseen_index_for_select = np.array([np.where(test._indices == i) for i in test_unseen_index]).reshape(-1)
+test_unseen = test.index_select(test_unseen_index_for_select)
+test_unseen_loader = DataLoader(test_unseen, batch_size=args.batch_size, follow_batch=['x', 'compound_pair'], shuffle=False, pin_memory=False, num_workers=10)
 
 from models.model import *
 device = 'cuda'
@@ -254,6 +261,9 @@ logger.log_message(f"Begin test")
 if accelerator.is_main_process:
     metrics = evaluate_mean_pocket_cls_coord_multi_task(accelerator, args, test_loader, accelerator.unwrap_model(model), com_coord_criterion, criterion, pocket_cls_criterion, pocket_coord_criterion, args.relative_k,
                                                         accelerator.device, pred_dis=pred_dis, use_y_mask=False, stage=2)
-    logger.log_stats(metrics, 0, args, prefix="Test_pp")
-    
+    logger.log_stats(metrics, 0, args, prefix="Test_all")
+
+    metrics = evaluate_mean_pocket_cls_coord_multi_task(accelerator, args, test_unseen_loader, accelerator.unwrap_model(model), com_coord_criterion, criterion, pocket_cls_criterion, pocket_coord_criterion, args.relative_k,
+                                                        accelerator.device, pred_dis=pred_dis, use_y_mask=False, stage=2)
+    logger.log_stats(metrics, 0, args, prefix="Test_unseen")
 accelerator.wait_for_everyone()
