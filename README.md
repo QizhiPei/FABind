@@ -68,7 +68,7 @@ Then the ESM2 embedings will be saved at `${data_path}/dataset/processed/esm2_t3
 ## Model
 The pre-trained model is placed at `ckpt/best_model.bin`, which will be automatically downloaded when cloning this reporsitory with `--recursive`. 
 
-You can also manually download the pre-trained model from https://huggingface.co/QizhiPei/FABind_model/tree/main.
+You can also manually download the pre-trained model from [Hugging Face](https://huggingface.co/QizhiPei/FABind_model/tree/main) or [Google Drive](https://drive.google.com/file/d/1IxVQxuBcSVophrHdaVurdSB1zOQ4zIE6/view?usp=sharing).
 
 ## Evaluation
 ```shell
