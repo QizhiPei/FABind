@@ -20,6 +20,8 @@ This repository contains the source code for *NeurIPS 2023* paper "[FABind: Fast
 ![](./imgs/pipeline.png)
 
 ## News
+**Jan 01 2024**: Upload trained checkpoint into Google Drive.
+
 **Nov 09 2023**: Move trained checkpoint from Github to HuggingFace.
 
 **Oct 10 2023**: The trained FABind model and processed dataset are released!
