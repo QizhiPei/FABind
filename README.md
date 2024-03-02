@@ -21,6 +21,8 @@ This repository contains the source code for *NeurIPS 2023* paper "[FABind: Fast
 ![](./imgs/pipeline.png)
 
 ## News
+**Mar 02 2024**: Fix inference code bug.
+
 **Jan 01 2024**: Upload trained checkpoint into Google Drive.
 
 **Nov 09 2023**: Move trained checkpoint from Github to HuggingFace.
@@ -30,7 +32,7 @@ This repository contains the source code for *NeurIPS 2023* paper "[FABind: Fast
 **Oct 11 2023**: Initial commits. More codes, pre-trained model, and data are coming soon.
 
 ## Setup Environment
-This is an example of how to set up a working conda environment to run the code. In this example, we have cuda version==11.3, and we install torch==1.12.0. To make sure the pyg packages are installed correctely, we directly install them from whl.
+This is an example of how to set up a working conda environment to run the code. In this example, we have cuda version==11.3, torch==1.12.0, and rdkit==2021.03.4. To make sure the pyg packages are installed correctely, we directly install them from whl.
 
 **As the trained model checkpoint is included in the HuggingFace repository with git-lfs, you need to install git-lfs to pull the data correctly.**
 
@@ -47,8 +49,9 @@ pip install https://data.pyg.org/whl/torch-1.12.0%2Bcu113/torch_sparse-0.6.15%2B
 pip install https://data.pyg.org/whl/torch-1.12.0%2Bcu113/torch_spline_conv-1.2.1%2Bpt112cu113-cp38-cp38-linux_x86_64.whl
 pip install https://data.pyg.org/whl/torch-1.12.0%2Bcu113/pyg_lib-0.2.0%2Bpt112cu113-cp38-cp38-linux_x86_64.whl
 pip install torch-geometric==2.4.0
-pip install torchdrug==0.1.2 rdkit torchmetrics==0.10.2 tqdm mlcrate pyarrow accelerate Bio lmdb fair-esm tensorboard
+pip install torchdrug==0.1.2 torchmetrics==0.10.2 tqdm mlcrate pyarrow accelerate Bio lmdb fair-esm tensorboard
 pip install fair-esm
+pip install rdkit-pypi==2021.03.4
 ```
 
 ## Data
