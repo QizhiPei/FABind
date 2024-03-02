@@ -15,21 +15,23 @@ FABind: Fast and Accurate Protein-Ligand Binding 🔥
 
 </div>
 
+## News
+🔥***Mar 02 2024***: *Fix inference code bug.*
+
+🔥***Jan 01 2024***: *Upload trained checkpoint into Google Drive.*
+
+🔥***Nov 09 2023***: *Move trained checkpoint from Github to HuggingFace.*
+
+🔥***Oct 10 2023***: *The trained FABind model and processed dataset are released!*
+
+🔥***Oct 11 2023***: *Initial commits. More codes, pre-trained model, and data are coming soon.*
+
+
 ## Overview
 This repository contains the source code for *NeurIPS 2023* paper "[FABind: Fast and Accurate Protein-Ligand Binding](https://arxiv.org/abs/2310.06763)". FABind achieves accurate docking performance with high speed compared to recent baselines. If you have questions, don't hesitate to open an issue or ask me via <qizhipei@ruc.edu.cn>, Kaiyuan Gao via <im_kai@hust.edu.cn>, or Lijun Wu via <lijuwu@microsoft.com>. We are happy to hear from you!
 
 ![](./imgs/pipeline.png)
 
-## News
-**Mar 02 2024**: Fix inference code bug.
-
-**Jan 01 2024**: Upload trained checkpoint into Google Drive.
-
-**Nov 09 2023**: Move trained checkpoint from Github to HuggingFace.
-
-**Oct 10 2023**: The trained FABind model and processed dataset are released!
-
-**Oct 11 2023**: Initial commits. More codes, pre-trained model, and data are coming soon.
 
 ## Setup Environment
 This is an example of how to set up a working conda environment to run the code. In this example, we have cuda version==11.3, torch==1.12.0, and rdkit==2021.03.4. To make sure the pyg packages are installed correctely, we directly install them from whl.
