@@ -16,7 +16,7 @@ FABind: Fast and Accurate Protein-Ligand Binding 🔥
 </div>
 
 ## News
-🔥***Mar 02 2024***: *Fix inference code bug.*
+🔥***Mar 02 2024***: *Fix the bug of inference from custom complex caused by an incorrect loaded parameter and rdkit version.*
 
 🔥***Jan 01 2024***: *Upload trained checkpoint into Google Drive.*
 
