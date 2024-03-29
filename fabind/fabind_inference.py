@@ -146,7 +146,7 @@ parser.add_argument('--pocket-radius', type=float, default=20.0)
 
 parser.add_argument('--rm-LAS-constrained-optim', action='store_true', default=False)
 parser.add_argument('--rm-F-norm', action='store_true', default=False)
-parser.add_argument('--norm-type', type=str, default="all_sample", choices=['per_sample', '4_sample', 'all_sample'])
+parser.add_argument('--norm-type', type=str, default="per_sample", choices=['per_sample', '4_sample', 'all_sample'])
 
 # parser.add_argument("--only-predicted-pocket-mae-thr", type=float, default=3.0)
 parser.add_argument('--noise-for-predicted-pocket', type=float, default=5.0)

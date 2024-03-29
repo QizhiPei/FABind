@@ -125,6 +125,11 @@ def read_smiles(smile):
     except:
         print("warning: cannot sanitize smiles: ", smile)
         mol = Chem.MolFromSmiles(smile, sanitize=False)
+    
+    sm = Chem.MolToSmiles(mol)
+    m_order = list(mol.GetPropsAsDict(includePrivate=True, includeComputed=True)['_smilesAtomOutputOrder'])
+    mol = Chem.RenumberAtoms(mol, m_order)
+    Chem.SanitizeMol(mol)
     return mol
 
 def generate_conformation(mol):
