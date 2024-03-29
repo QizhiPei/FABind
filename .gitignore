@@ -172,3 +172,5 @@ inference_examples/inference_output
 test_all.sh
 test_unseen.sh
 test_tmp.sh
+tmp_infer.sh
+tmp_files

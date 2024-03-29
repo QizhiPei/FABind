@@ -212,6 +212,7 @@ parser.add_argument("--test-unseen", action='store_true', default=False)
 
 parser.add_argument('--sdf-output-path-post-optim', type=str, default="")
 parser.add_argument('--write-mol-to-file', action='store_true', default=False)
+parser.add_argument('--sdf-to-mol2', action='store_true', default=False)
 
 parser.add_argument('--index-csv', type=str, default=None)
 parser.add_argument('--pdb-file-dir', type=str, default="")
@@ -253,6 +254,7 @@ args.gs_tau = args_new.gs_tau
 args.compound_coords_init_mode = args_new.compound_coords_init_mode
 args.sdf_output_path_post_optim = args_new.sdf_output_path_post_optim
 args.write_mol_to_file = args_new.write_mol_to_file
+args.sdf_to_mol2 = args_new.sdf_to_mol2
 args.n_iter = args_new.n_iter
 args.redocking = args_new.redocking
 
@@ -320,7 +322,7 @@ def post_optim_mol(args, accelerator, data, com_coord_pred, com_coord_pred_per_s
         mol_list.append(data[i].mol)
         uid_list.append(data[i].uid)
         smiles_list.append(data[i]['compound'].smiles)
-        idx_sdf_name_list.append(data[i].uid + '_' + str(data[i].idx.item()) + '.sdf')
+        sdf_name_list.append(data[i].ligand_id + '.sdf')
 
 
     return
@@ -354,7 +356,7 @@ com_coord_per_sample_list = []
 
 uid_list = []
 smiles_list = []
-idx_sdf_name_list = []
+sdf_name_list = []
 mol_list = []
 com_coord_pred_per_sample_list = []
 com_coord_offset_per_sample_list = []
@@ -372,24 +374,19 @@ for batch_id, data in enumerate(data_iter):
     except:
         continue
 
-    # if batch_id % 10 == 0 and args.write_mol_to_file:
-    #     save_dir = os.path.join(args.sdf_output_path_post_optim, f'batch_{batch_id}')
-    #     pathlib.Path(save_dir).mkdir(parents=True, exist_ok=True) 
-    #     info = pd.DataFrame({'uid': uid_list, 'smiles': smiles_list, 'idx_sdf_name': idx_sdf_name_list})
-    #     info.to_csv(os.path.join(save_dir, f"uid_smiles_sdfname.csv"), index=False)
-    #     for i in tqdm(range(len(info))):
-
-    #         save_coords = com_coord_pred_per_sample_list[i] + com_coord_offset_per_sample_list[i]
-    #         mol = write_mol(reference_mol=mol_list[i], coords=save_coords, output_file=os.path.join(save_dir, info.iloc[i]['idx_sdf_name']))
+if args.sdf_to_mol2:
+    from utils.sdf_to_mol2 import convert_sdf_to_mol2
 
 if args.write_mol_to_file:
-    info = pd.DataFrame({'uid': uid_list, 'smiles': smiles_list, 'idx_sdf_name': idx_sdf_name_list})
+    info = pd.DataFrame({'uid': uid_list, 'smiles': smiles_list, 'sdf_name': sdf_name_list})
     info.to_csv(os.path.join(args.sdf_output_path_post_optim, f"uid_smiles_sdfname.csv"), index=False)
     for i in tqdm(range(len(info))):
 
         save_coords = com_coord_pred_per_sample_list[i] + com_coord_offset_per_sample_list[i]
-        mol = write_mol(reference_mol=mol_list[i], coords=save_coords, output_file=os.path.join(args.sdf_output_path_post_optim, info.iloc[i]['idx_sdf_name']))
-
+        sdf_output_path = os.path.join(args.sdf_output_path_post_optim, info.iloc[i]['sdf_name'])
+        mol = write_mol(reference_mol=mol_list[i], coords=save_coords, output_file=sdf_output_path)
+        if args.sdf_to_mol2:
+            convert_sdf_to_mol2(sdf_output_path, sdf_output_path.replace('.sdf', '.mol2'))
 
 end_time = time.time()  # 记录开始时间
 logger.log_message(f"End test, time spent: {end_time - start_time}")

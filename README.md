@@ -49,6 +49,7 @@ pip install https://data.pyg.org/whl/torch-1.12.0%2Bcu113/pyg_lib-0.2.0%2Bpt112c
 pip install torch-geometric
 pip install torchdrug==0.1.2 rdkit torchmetrics==0.10.2 tqdm mlcrate pyarrow accelerate Bio lmdb fair-esm tensorboard
 pip install fair-esm
+conda install -c conda-forge openbabel # install openbabel to save .mol2 file and .sdf file at the same time
 ```
 
 ## Data
@@ -123,7 +124,8 @@ python fabind_inference.py \
     --write-mol-to-file \
     --sdf-output-path-post-optim ${output_dir} \
     --index-csv ${index_csv} \
-    --preprocess-dir ${save_pt_dir}
+    --preprocess-dir ${save_pt_dir} \
+    --sdf-to-mol2
 ```
 
 

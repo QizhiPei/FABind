@@ -16,9 +16,9 @@ class InferenceDataset(Dataset):
             content = f.readlines()
         info = []
         for line in content[1:]:
-            smiles, pdb = line.strip().split(',')
-            info.append([smiles, pdb])
-        info = pd.DataFrame(info, columns=['smiles', 'pdb'])
+            smiles, pdb, ligand_id = line.strip().split(',')
+            info.append([smiles, pdb, ligand_id])
+        info = pd.DataFrame(info, columns=['smiles', 'pdb', 'ligand_id'])
 
         # read preprocessed data
         self.protein_feature, self.protein_structure = torch.load(os.path.join(preprocess_dir, 'processed_protein.pt'))
@@ -51,6 +51,7 @@ class InferenceDataset(Dataset):
             input_dict['molecule'] = mol
             input_dict['molecule_smiles'] = smiles
             input_dict['molecule_info'] = molecule_info
+            input_dict['ligand_id'] = info.iloc[i].ligand_id
             self.data.append(input_dict)
 
 
@@ -90,7 +91,8 @@ class InferenceDataset(Dataset):
         data.idx = idx
         data.uid = input_dict['protein_structure']['name']
         data.mol = input_dict['molecule']
-
+        data.ligand_id = input_dict['ligand_id']
+        
         # complex whole graph
         data['complex_whole_protein'].node_coords = torch.cat( # [glb_c || compound || glb_p || protein]
             (
