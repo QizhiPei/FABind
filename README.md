@@ -4,8 +4,10 @@ FABind: Fast and Accurate Protein-Ligand Binding 🔥
 
 <div align="center">
 
-[![](https://img.shields.io/badge/paper-arxiv2310.06763-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2310.06763)
-[![](https://img.shields.io/badge/paper-openreview-red?style=plastic&logo=GitBook)](https://openreview.net/forum?id=PnWakgg1RL)
+[![](https://img.shields.io/badge/FABind-arxiv2310.06763-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2310.06763)
+[![](https://img.shields.io/badge/FABind+-arxiv2403.20261-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2403.20261)
+[![](https://img.shields.io/badge/FABind-openreview-red?style=plastic&logo=GitBook)](https://openreview.net/forum?id=PnWakgg1RL)
+
 [![](https://img.shields.io/badge/poster_page-blue?style=plastic&logo=googleslides)](https://neurips.cc/virtual/2023/poster/71739)
 [![](https://img.shields.io/badge/project_page-blue?style=plastic&logo=internetcomputer)](https://fabind-neurips23.github.io)
 [![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://huggingface.co/QizhiPei/FABind_model) 
@@ -16,6 +18,8 @@ FABind: Fast and Accurate Protein-Ligand Binding 🔥
 </div>
 
 ## News
+🔥***Apr 01 2024***: *Release our new version FABind+ with enhanced performance and sampling ability. Check the FABind+ paper on [arxiv](https://arxiv.org/abs/2403.20261). The corresponding codes will be released soon.*
+
 🔥***Mar 02 2024***: *Fix the bug of inference from custom complex caused by an incorrect loaded parameter and rdkit version. We also normalize the order of the atom for the writed mol file in post optimization. See more details in this [commit](https://github.com/QizhiPei/FABind/commit/840631ce7957ffb9d24c71b2aa0258c93a0088e7).*
 
 🔥***Jan 01 2024***: *Upload trained checkpoint into Google Drive.*
@@ -188,6 +192,12 @@ accelerate launch fabind/main_fabind.py \
   booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
   year={2023},
   url={https://openreview.net/forum?id=PnWakgg1RL}
+}
+@misc{gao2024fabind,
+      title={FABind+: Enhancing Molecular Docking through Improved Pocket Prediction and Pose Generation}, 
+      author={Kaiyuan Gao and Qizhi Pei and Jinhua Zhu and Tao Qin and Kun He and Lijun Wu},
+      journal={arXiv preprint arXiv:2403.20261},
+      year={2024}
 }
 ```
 
