@@ -34,7 +34,7 @@ This repository contains the source code for *NeurIPS 2023* paper "[FABind: Fast
 
 
 ## Setup Environment
-This is an example of how to set up a working conda environment to run the code. In this example, we have cuda version==11.3, torch==1.12.0, and rdkit==2021.03.4. To make sure the pyg packages are installed correctely, we directly install them from whl.
+This is an example of how to set up a working conda environment to run the code. In this example, we have cuda version==11.3, torch==1.12.0, and rdkit==2021.03.4. To make sure the pyg packages are installed correctly, we directly install them from whl.
 
 **As the trained model checkpoint is included in the HuggingFace repository with git-lfs, you need to install git-lfs to pull the data correctly.**
 
