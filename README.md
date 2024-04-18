@@ -178,6 +178,7 @@ accelerate launch fabind/main_fabind.py \
 
 ## About
 ### Citations
+#### FABind
 ```
 @article{pei2023fabind,
   title={FABind: Fast and Accurate Protein-Ligand Binding},
@@ -193,11 +194,14 @@ accelerate launch fabind/main_fabind.py \
   year={2023},
   url={https://openreview.net/forum?id=PnWakgg1RL}
 }
-@misc{gao2024fabind,
-      title={FABind+: Enhancing Molecular Docking through Improved Pocket Prediction and Pose Generation}, 
-      author={Kaiyuan Gao and Qizhi Pei and Jinhua Zhu and Tao Qin and Kun He and Lijun Wu},
-      journal={arXiv preprint arXiv:2403.20261},
-      year={2024}
+```
+#### FABind+
+```
+@article{gao2024fabind+,
+  title={FABind+: Enhancing Molecular Docking through Improved Pocket Prediction and Pose Generation},
+  author={Gao, Kaiyuan and Pei, Qizhi and Zhu, Jinhua and Qin, Tao and He, Kun and Liu, Tie-Yan and Wu, Lijun},
+  journal={arXiv preprint arXiv:2403.20261},
+  year={2024}
 }
 ```
 
