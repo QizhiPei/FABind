@@ -369,7 +369,7 @@ for batch_id, data in enumerate(data_iter):
         for i in range(len(data)):
             LAS_tmp.append(data[i]['compound', 'LAS', 'compound'].edge_index.detach().clone())
         with torch.no_grad():
-            com_coord_pred, compound_batch = model.inference(data)        
+            com_coord_pred, compound_batch, com_hidden_features = model.inference(data)        
         post_optim_mol(args, accelerator, data, com_coord_pred, com_coord_pred_per_sample_list, com_coord_per_sample_list, compound_batch, LAS_tmp=LAS_tmp, rigid=args.rigid)
     except:
         continue

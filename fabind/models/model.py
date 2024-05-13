@@ -577,7 +577,16 @@ class IaBNet_mean_and_pocket_prediction_cls_coords_dependent(torch.nn.Module):
         compound_coords_out = complex_coords[compound_flag].squeeze(-2)
         compound_coords_out = self.unnormalize_coord(compound_coords_out)
         
-        return compound_coords_out, compound_batch
+        # to extract hidden_features for each complex
+        unique_groups, inverse_indices, counts = torch.unique_consecutive(complex_batch, return_inverse=True, return_counts=True)
+        complex_hidden_list = list()
+        for group in unique_groups:
+            mask = complex_batch == group
+            complex_aggregation_hidden = complex_out[mask]
+            complex_aggregation_hidden = complex_aggregation_hidden.sum(dim=0)/complex_aggregation_hidden.shape[0]
+            complex_hidden_list.append(complex_aggregation_hidden)
+        
+        return compound_coords_out, compound_batch, complex_hidden_list
 
 def get_model(args, logger, device):
     if args.mode == 5:
