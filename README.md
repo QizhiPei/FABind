@@ -30,7 +30,7 @@ Note: if you want to install or run our codes, please cd to subfolders first.
 
 </div>
 
-Authors: Qizhi Pei$^*$, Kaiyuan Gao$^*$, Lijun Wu$^†$, Jinhua Zhu, Yingce Xia, Shufang Xie, Tao Qin, Kun He, Tie-Yan Liu, Rui Yan$^†$
+Authors: Qizhi Pei<sup>* </sup>, Kaiyuan Gao<sup>* </sup>, Lijun Wu<sup>† </sup>, Jinhua Zhu, Yingce Xia, Shufang Xie, Tao Qin, Kun He, Tie-Yan Liu, Rui Yan<sup>† </sup>
 
 ![](./FABind/imgs/pipeline.png)
 
@@ -42,7 +42,7 @@ Authors: Qizhi Pei$^*$, Kaiyuan Gao$^*$, Lijun Wu$^†$, Jinhua Zhu, Yingce Xia,
 
 </div>
 
-Authors: Kaiyuan Gao$^*$, Qizhi Pei$^*$, Gongbo Zhang, Jinhua Zhu, Kun He, Lijun Wu$^†$
+Authors: Kaiyuan Gao<sup>* </sup>, Qizhi Pei<sup>* </sup>, Gongbo Zhang, Jinhua Zhu, Kun He, Lijun Wu<sup>† </sup>
 
 ![](./FABind+/imgs/pipeline.jpg)
 
