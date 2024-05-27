@@ -44,7 +44,7 @@ Authors: Qizhi Pei<sup>* </sup>, Kaiyuan Gao<sup>* </sup>, Lijun Wu<sup>† </su
 
 Authors: Kaiyuan Gao<sup>* </sup>, Qizhi Pei<sup>* </sup>, Gongbo Zhang, Jinhua Zhu, Kun He, Lijun Wu<sup>† </sup>
 
-![](./FABind+/imgs/pipeline.jpg)
+![](./FABind_plus/imgs/pipeline.jpg)
 
 ## News
 🔥***May 27 2024***: *The training code, model checkpoint and preprocessed data for FABind+ are released!*
