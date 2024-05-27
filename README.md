@@ -24,7 +24,7 @@ Note: if you want to install or run our codes, please cd to subfolders first.
 [![](https://img.shields.io/badge/poster_page-blue?style=plastic&logo=googleslides)](https://neurips.cc/virtual/2023/poster/71739)
 [![](https://img.shields.io/badge/project_page-blue?style=plastic&logo=internetcomputer)](https://fabind-neurips23.github.io)
 [![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://huggingface.co/QizhiPei/FABind_model) 
-[![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/10021618)
+[![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/11352521)
 [![](https://img.shields.io/badge/awesome-docking-orange?style=plastic&logo=awesomelists)](https://github.com/KyGao/awesome-docking/tree/main)
 [![](https://img.shields.io/badge/PyTorch-1.12+-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
 
@@ -39,6 +39,11 @@ Authors: Qizhi Pei<sup>* </sup>, Kaiyuan Gao<sup>* </sup>, Lijun Wu<sup>† </su
 <div align="center">
 
 [![](https://img.shields.io/badge/FABind+-arxiv2403.20261-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2403.20261)
+
+[![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://huggingface.co/KyGao/FABind_plus_model) 
+[![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/11352521)
+[![](https://img.shields.io/badge/awesome-docking-orange?style=plastic&logo=awesomelists)](https://github.com/KyGao/awesome-docking/tree/main)
+[![](https://img.shields.io/badge/PyTorch-1.12+-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
 
 </div>
 

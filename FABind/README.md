@@ -11,7 +11,7 @@ FABind: Fast and Accurate Protein-Ligand Binding 🔥
 [![](https://img.shields.io/badge/poster_page-blue?style=plastic&logo=googleslides)](https://neurips.cc/virtual/2023/poster/71739)
 [![](https://img.shields.io/badge/project_page-blue?style=plastic&logo=internetcomputer)](https://fabind-neurips23.github.io)
 [![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://huggingface.co/QizhiPei/FABind_model) 
-[![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/10021618)
+[![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/11352521)
 [![](https://img.shields.io/badge/awesome-docking-orange?style=plastic&logo=awesomelists)](https://github.com/KyGao/awesome-docking/tree/main)
 [![](https://img.shields.io/badge/PyTorch-1.12+-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
 
@@ -51,9 +51,9 @@ conda install -c conda-forge openbabel # install openbabel to save .mol2 file an
 ## Data
 The PDBbind 2020 dataset can be download from http://www.pdbbind.org.cn. We then follow the same data processing as [TankBind](https://github.com/luwei0917/TankBind/blob/main/examples/construction_PDBbind_training_and_test_dataset.ipynb).
 
-We also provided processed dataset on [zenodo](https://zenodo.org/records/10021618).
+We also provided processed dataset on [zenodo](https://zenodo.org/records/11352521).
 If you want to train FABind from scratch, or reproduce the FABind results, you can:
-1. download dataset from [zenodo](https://zenodo.org/records/10021618)
+1. download dataset from [zenodo](https://zenodo.org/records/11352521)
 2. unzip the `zip` file and place it into `data_path` such that `data_path=pdbbind2020`
 
 ### Generate the ESM2 embeddings for the proteins

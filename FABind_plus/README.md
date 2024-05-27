@@ -10,7 +10,7 @@ FABind+: Enhancing Molecular Docking through Improved Pocket Prediction and Pose
 
 
 [![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://huggingface.co/KyGao/FABind_plus_model) 
-[![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/10021618)
+[![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/11352521)
 [![](https://img.shields.io/badge/awesome-docking-orange?style=plastic&logo=awesomelists)](https://github.com/KyGao/awesome-docking/tree/main)
 [![](https://img.shields.io/badge/PyTorch-1.12+-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
 
@@ -49,11 +49,11 @@ cd FABind_plus
 ```
 
 ## Data
-Compared to FABind, we additionally add isomorphism features and construct `data_new.pt` using scripts in `fabind/tools/inject_isomorphism_to_data.py`. Everything else remains the same. We provide the processed dataset on [zenodo](https://zenodo.org/records/10021618).
+Compared to FABind, we additionally add isomorphism features and construct `data_new.pt` using scripts in `fabind/tools/inject_isomorphism_to_data.py`. Everything else remains the same. We provide the processed dataset on [zenodo](https://zenodo.org/records/11352521).
 
 If you want to train FABind+ from scratch, or reproduce the FABind+ results, you can:
 If you want to train FABind from scratch, or reproduce the FABind results, you can:
-1. download dataset from [zenodo](https://zenodo.org/records/10021618)
+1. download dataset from [zenodo](https://zenodo.org/records/11352521)
 2. unzip the `zip` file and place it into `data_path` such that `data_path=pdbbind2020`
 
 ### Generate the ESM2 embeddings for the proteins
