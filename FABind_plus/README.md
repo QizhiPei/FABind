@@ -17,7 +17,7 @@ FABind+: Enhancing Molecular Docking through Improved Pocket Prediction and Pose
 </div>
 
 ## Overview
-This repository contains the source code for the paper "[FABind+: Enhancing Molecular Docking through Improved Pocket Prediction and Pose Generation](https://arxiv.org/abs/2403.20261)". FABind+ achieves accurate docking performance with high speed compared to recent baselines. If you have questions, don't hesitate to open an issue or ask me via <im_kai@hust.edu.cn>, Qizhi Pei via <qizhipei@ruc.edu.cn>, or Lijun Wu via <lijuwu@microsoft.com>. We are happy to hear from you!
+This repository contains the source code for the paper "[FABind+: Enhancing Molecular Docking through Improved Pocket Prediction and Pose Generation](https://arxiv.org/abs/2403.20261)". FABind+ achieves accurate docking performance with high speed compared to recent baselines. If you have questions, don't hesitate to open an issue or ask me via <im_kai@hust.edu.cn>, Qizhi Pei via <qizhipei@ruc.edu.cn>, or Lijun Wu via <lijun_wu@outlook.com>. We are happy to hear from you!
 
 ![](./imgs/pipeline.jpg)
 
