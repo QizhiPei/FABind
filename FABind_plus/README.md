@@ -113,7 +113,6 @@ echo "======  inference begins  ======"
 python inference_fabind.py \
     --ckpt ${ckpt_path} \
     --batch_size 4 \
-    --test-gumbel-soft \
     --post-optim \
     --write-mol-to-file \
     --sdf-output-path-post-optim ${output_dir} \

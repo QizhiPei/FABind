@@ -19,9 +19,9 @@ with open(args.index_csv, 'r') as f:
     content = f.readlines()
 info = []
 for line in content[1:]:
-    smiles, pdb = line.strip().split(',')
-    info.append([smiles, pdb])
-info = pd.DataFrame(info, columns=['smiles', 'pdb'])
+    smiles, pdb, ligand_id = line.strip().split(',')
+    info.append([smiles, pdb, ligand_id])
+info = pd.DataFrame(info, columns=['smiles', 'pdb', 'ligand_id'])
 
 def get_mol_info(idx):
     try:
