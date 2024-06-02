@@ -52,7 +52,6 @@ cd FABind_plus
 Compared to FABind, we additionally add isomorphism features and construct `data_new.pt` using scripts in `fabind/tools/inject_isomorphism_to_data.py`. Everything else remains the same. We provide the processed dataset on [zenodo](https://zenodo.org/records/11352521).
 
 If you want to train FABind+ from scratch, or reproduce the FABind+ results, you can:
-If you want to train FABind from scratch, or reproduce the FABind results, you can:
 1. download dataset from [zenodo](https://zenodo.org/records/11352521)
 2. unzip the `zip` file and place it into `data_path` such that `data_path=pdbbind2020`
 
