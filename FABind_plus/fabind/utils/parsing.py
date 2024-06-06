@@ -144,7 +144,7 @@ def parse_train_args(test=False):
                         help="option to switch training data after certain epochs.")
     parser.add_argument('--disable-validate', action='store_true', default=False)
     parser.add_argument('--disable-tensorboard', action='store_true', default=False)
-    parser.add_argument("--hidden-size", type=int, default=256)
+    parser.add_argument("--hidden-size", type=int, default=512)
     parser.add_argument("--weight-decay", type=float, default=0.0)
     parser.add_argument("--stage-prob", type=float, default=0.5)
     parser.add_argument("--pocket-pred-hidden-size", type=int, default=128)
