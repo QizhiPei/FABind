@@ -184,5 +184,5 @@ if args.write_mol_to_file:
         
 
 end_time = time.time()  # 记录开始时间
-logger.log_message(f"End test, time spent: {end_time - start_time}")
+logger.log_message(f"End infer, time spent: {end_time - start_time}")
 

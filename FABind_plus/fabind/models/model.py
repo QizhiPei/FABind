@@ -479,7 +479,28 @@ class FABindPlus(torch.nn.Module):
         pred_pocket_center_gumbel = pred_index_one_hot_true * protein_coords_batched_whole
         pred_pocket_center = pred_pocket_center_gumbel.sum(dim=1) / pred_index_one_hot_true.sum(dim=1)
 
-        
+        if self.args.use_clustering:
+            centers = torch.zeros_like(pred_pocket_center)
+            for i in range(pred_pocket_center.shape[0]):            
+                positive_prob = pred_index_true[i].squeeze()
+                positive_residue_coords = protein_coords_batched_whole[i][positive_prob > 0.5]
+                if positive_residue_coords.shape[0] < 50:
+                    top_50_indices = torch.argsort(positive_prob)[-50:]
+                    bool_tensor = torch.full(positive_prob.shape, False)
+                    bool_tensor[top_50_indices] = True
+                    positive_residue_coords = protein_coords_batched_whole[i][bool_tensor]
+                positive_residue_coords = positive_residue_coords.detach().cpu().numpy()
+                clustering = self.dbscan_module.fit(positive_residue_coords)
+                min_cluster_mae = 100.
+                # sample a integer from 0 to clustering.labels_.max() in the next line
+                random_cluster_id = random.randint(0, clustering.labels_.max())
+                if random.random() < self.args.choose_cluster_prob:
+                    center_array = positive_residue_coords[clustering.labels_==random_cluster_id].mean(axis=0)
+                    centers[i] = torch.tensor(center_array, device=compound_batch.device)
+                else:
+                    centers[i] = pred_pocket_center[i]
+            pred_pocket_center = centers
+
         # Replace raw feature with pocket prediction output
         # batched_compound_emb = self.compound_linear(data['compound'].node_feats)
         batched_compound_emb = compound_out_whole_protein
@@ -637,7 +658,15 @@ class FABindPlus(torch.nn.Module):
         compound_coords_out = complex_coords[compound_flag].squeeze(-2)
         compound_coords_out = self.unnormalize_coord(compound_coords_out) + pocket_center_bias[compound_batch] # move back to whole protein coordinate
         
-        return compound_coords_out, compound_batch
+        if self.confidence_training:
+            if self.args.stack_mlp:
+                confidence_hidden = self.ranking_mlp_pre(scatter_add(src=complex_out, index=complex_batch, dim=0)).relu()
+            else:
+                confidence_hidden = scatter_add(src=complex_out, index=complex_batch, dim=0)
+            confidence_score_pred = self.ranking_score_mlp(confidence_hidden).squeeze(-1)
+            return compound_coords_out, compound_batch, confidence_score_pred
+        else:
+            return compound_coords_out, compound_batch
 
 
 def get_model(args, logger):

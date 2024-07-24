@@ -84,7 +84,7 @@ python fabind/test_regression_fabind.py \
     --ckpt ${ckpt_path}
 ```
 ### Inference on Custom Complexes
-Here are the scripts available for inference with smiles and according pdb files.
+Here are the scripts available for inference with smiles and according pdb files with regression-based FABind+.
 
 The following script iteratively runs:
 - Given smiles in `index_csv`, preprocess molecules with `num_threads` multiprocessing and save each processed molecule to `{save_pt_dir}/mol`.
@@ -109,7 +109,7 @@ echo "======  preprocess proteins  ======"
 python inference_preprocess_protein.py --pdb_file_dir ${pdb_file_dir} --save_pt_dir ${save_pt_dir}
 
 echo "======  inference begins  ======"
-python inference_fabind.py \
+python inference_regression_fabind.py \
     --ckpt ${ckpt_path} \
     --batch_size 4 \
     --post-optim \
@@ -155,6 +155,44 @@ python fabind/test_sampling_fabind.py \
     --sample-size ${sample_size} \
     --symmetric-rmsd ${data_path}/renumber_atom_index_same_as_smiles \
     --save-rmsd-dir ./rmsd_results
+```
+
+### Inference on Custom Complexes
+Here are the scripts available for inference with smiles and according pdb files with sampling-based FABind+. The sampled molecules are saved in each folder with confidence score postfix. The best predictions are then copied in the `output_dir`.
+
+The following script iteratively runs:
+- Given smiles in `index_csv`, preprocess molecules with `num_threads` multiprocessing and save each processed molecule to `{save_pt_dir}/mol`.
+- Given protein pdb files in `pdb_file_dir`, preprocess protein information and save it to `{save_pt_dir}/processed_protein.pt`.
+- Load model checkpoint in `ckpt_path`, save the predicted molecule conformation in `output_dir`. Another csv file in `output_dir` indicates the smiles and according filename.
+
+```shell
+index_csv=../inference_examples/example.csv
+pdb_file_dir=../inference_examples/pdb_files
+num_threads=10
+save_pt_dir=../inference_examples/temp_files
+save_mols_dir=${save_pt_dir}/mol
+ckpt_path=../ckpt/confidence_model.bin
+output_dir=../inference_examples/inference_sampling_output
+
+cd fabind
+
+echo "======  preprocess molecules  ======"
+python inference_preprocess_mol_confs.py --index_csv ${index_csv} --save_mols_dir ${save_mols_dir} --num_threads ${num_threads}
+
+echo "======  preprocess proteins  ======"
+python inference_preprocess_protein.py --pdb_file_dir ${pdb_file_dir} --save_pt_dir ${save_pt_dir}
+
+echo "======  inference begins  ======"
+python inference_sampling_fabind.py \
+    --ckpt ${ckpt_path} \
+    --use-clustering --infer-dropout \
+    --sample-size 10 \
+    --batch_size 4 \
+    --post-optim \
+    --write-mol-to-file \
+    --sdf-output-path-post-optim ${output_dir} \
+    --index-csv ${index_csv} \
+    --preprocess-dir ${save_pt_dir}
 ```
 
 ### Re-training Confidence Model
