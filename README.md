@@ -6,12 +6,13 @@ Official Repository for the FABind Series Methods 🔥
 
 [![](https://img.shields.io/badge/FABind-openreview-red?style=plastic&logo=GitBook)](https://openreview.net/forum?id=PnWakgg1RL)
 [![](https://img.shields.io/badge/FABind+-arxiv2403.20261-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2403.20261)
+[![](https://img.shields.io/badge/FABFlex-openreview-red?style=plastic&logo=GitBook)](https://openreview.net/forum?id=iezDdA9oeB)
 
 </div>
 
 ## Overview
 
-This repository contains the source code for paper "[FABind: Fast and Accurate Protein-Ligand Binding](https://arxiv.org/abs/2310.06763)" and "[FABind+: Enhancing Molecular Docking through Improved Pocket Prediction and Pose Generation](https://arxiv.org/abs/2403.20261)". If you have questions, don't hesitate to open an issue or ask me via <qizhipei@ruc.edu.cn>, Kaiyuan Gao via <im_kai@hust.edu.cn>, or Lijun Wu via <lijun_wu@outlook.com>. We are happy to hear from you!
+This repository contains the source code for paper "[FABind: Fast and Accurate Protein-Ligand Binding](https://arxiv.org/abs/2310.06763)", "[FABind+: Enhancing Molecular Docking through Improved Pocket Prediction and Pose Generation](https://arxiv.org/abs/2403.20261)", and link for "[FABFlex: Fast and Accurate Blind Flexible Docking](https://arxiv.org/abs/2502.14934)". If you have questions, don't hesitate to open an issue or ask me via <qizhipei@ruc.edu.cn>, Kaiyuan Gao via <im_kai@hust.edu.cn>, or Lijun Wu via <lijun_wu@outlook.com>. We are happy to hear from you!
 
 `Note: if you want to install or run our codes, please cd to subfolders first.`
 
@@ -56,6 +57,7 @@ Authors: Kaiyuan Gao<sup>* </sup>, Qizhi Pei<sup>* </sup>, Gongbo Zhang, Jinhua 
 <div align="center">
 
 [![](https://img.shields.io/badge/FABFlex-arxiv2502.14934-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2502.14934)
+[![](https://img.shields.io/badge/FABFlex-openreview-red?style=plastic&logo=GitBook)](https://openreview.net/forum?id=iezDdA9oeB)
 
 [![](https://img.shields.io/github/stars/resistzzz/FABFlex?color=yellow&style=social)](https://github.com/resistzzz/FABFlex)
 [![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://drive.google.com/drive/folders/1WXhDX1wuYrvtwwEZyZakAy5lxpNcQ0A5) 
