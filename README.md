@@ -51,7 +51,28 @@ Authors: Kaiyuan Gao<sup>* </sup>, Qizhi Pei<sup>* </sup>, Gongbo Zhang, Jinhua 
 
 ![](./FABind_plus/imgs/pipeline.jpg)
 
+## FABFlex: Fast and Accurate Blind Flexible Docking
+
+<div align="center">
+
+[![](https://img.shields.io/badge/FABFlex-arxiv2502.14934-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2502.14934)
+
+[![](https://img.shields.io/github/stars/resistzzz/FABFlex?color=yellow&style=social)](https://github.com/resistzzz/FABFlex)
+[![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://drive.google.com/drive/folders/1WXhDX1wuYrvtwwEZyZakAy5lxpNcQ0A5) 
+[![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/14875959)
+
+
+</div>
+
+Authors: Zizhuo Zhang, Lijun Wu<sup>† </sup>, Kaiyuan Gao, Jiangchao Yao, Tao Qin, Bo Han<sup>† </sup>
+
+![](https://github.com/resistzzz/FABFlex/blob/main/figures/model.png)
+
 ## News
+🔥***Jan 2025***: *FABFlex is accepted by ICLR 2025! The training code, model checkpoint and preprocessed data for FABFlex are released in [FABFlex](https://github.com/resistzzz/FABFlex)!*
+
+🔥***Nov 2024***: *FABind+ is accepted by KDD 2025!*
+
 🔥***May 27 2024***: *The training code, model checkpoint and preprocessed data for FABind+ are released!*
 
 🔥***Apr 01 2024***: *Release our new version FABind+ with enhanced performance and sampling ability. Check the FABind+ paper on [arxiv](https://arxiv.org/abs/2403.20261). The corresponding codes will be released soon.*
@@ -87,6 +108,19 @@ Authors: Kaiyuan Gao<sup>* </sup>, Qizhi Pei<sup>* </sup>, Gongbo Zhang, Jinhua 
   year={2024}
 }
 ```
+
+#### FABFlex
+```
+@inproceedings{
+  zhang2025fast,
+  title={Fast and Accurate Blind Flexible Docking},
+  author={Zizhuo Zhang and Lijun Wu and Kaiyuan Gao and Jiangchao Yao and Tao Qin and Bo Han},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025},
+  url={https://openreview.net/forum?id=iezDdA9oeB}
+}
+```
+
 
 ### Related
 [Awesome-docking](https://github.com/KyGao/awesome-docking/tree/main)
