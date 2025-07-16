@@ -1,131 +1,44 @@
-<h1 align="center">
-Official Repository for the FABind Series Methods 🔥
-</h1>
-
-<div align="center">
-
-[![](https://img.shields.io/badge/FABind-openreview-red?style=plastic&logo=GitBook)](https://openreview.net/forum?id=PnWakgg1RL)
-[![](https://img.shields.io/badge/FABind+-arxiv2403.20261-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2403.20261)
-[![](https://img.shields.io/badge/FABFlex-openreview-red?style=plastic&logo=GitBook)](https://openreview.net/forum?id=iezDdA9oeB)
-
-</div>
-
-## Overview
-
-This repository contains the source code for paper "[FABind: Fast and Accurate Protein-Ligand Binding](https://arxiv.org/abs/2310.06763)", "[FABind+: Enhancing Molecular Docking through Improved Pocket Prediction and Pose Generation](https://arxiv.org/abs/2403.20261)", and link for "[FABFlex: Fast and Accurate Blind Flexible Docking](https://arxiv.org/abs/2502.14934)". If you have questions, don't hesitate to open an issue or ask me via <qizhipei@ruc.edu.cn>, Kaiyuan Gao via <im_kai@hust.edu.cn>, or Lijun Wu via <lijun_wu@outlook.com>. We are happy to hear from you!
-
-`Note: if you want to install or run our codes, please cd to subfolders first.`
-
-## FABind: Fast and Accurate Protein-Ligand Binding
-
-<div align="center">
-
-[![](https://img.shields.io/badge/FABind-arxiv2310.06763-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2310.06763)
-[![](https://img.shields.io/badge/FABind-openreview-red?style=plastic&logo=GitBook)](https://openreview.net/forum?id=PnWakgg1RL)
-[![](https://img.shields.io/badge/poster_page-blue?style=plastic&logo=googleslides)](https://neurips.cc/virtual/2023/poster/71739)
-[![](https://img.shields.io/badge/project_page-blue?style=plastic&logo=internetcomputer)](https://fabind-neurips23.github.io)
-[![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://huggingface.co/QizhiPei/FABind_model) 
-[![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/11352521)
-[![](https://img.shields.io/badge/awesome-docking-orange?style=plastic&logo=awesomelists)](https://github.com/KyGao/awesome-docking/tree/main)
-[![](https://img.shields.io/badge/PyTorch-1.12+-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
-
-</div>
-
-Authors: Qizhi Pei<sup>* </sup>, Kaiyuan Gao<sup>* </sup>, Lijun Wu<sup>† </sup>, Jinhua Zhu, Yingce Xia, Shufang Xie, Tao Qin, Kun He, Tie-Yan Liu, Rui Yan<sup>† </sup>
-
-![](./FABind/imgs/pipeline.png)
-
-## FABind+: Enhancing Molecular Docking through Improved Pocket Prediction and Pose Generation
-
-<div align="center">
-
-[![](https://img.shields.io/badge/FABind+-arxiv2403.20261-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2403.20261)
-
-[![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://huggingface.co/KyGao/FABind_plus_model) 
-[![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/11352521)
-[![](https://img.shields.io/badge/awesome-docking-orange?style=plastic&logo=awesomelists)](https://github.com/KyGao/awesome-docking/tree/main)
-[![](https://img.shields.io/badge/PyTorch-1.12+-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
-
-</div>
-
-Authors: Kaiyuan Gao<sup>* </sup>, Qizhi Pei<sup>* </sup>, Gongbo Zhang, Jinhua Zhu, Kun He, Lijun Wu<sup>† </sup>
-
-![](./FABind_plus/imgs/pipeline.jpg)
-
-## FABFlex: Fast and Accurate Blind Flexible Docking
-
-<div align="center">
-
-[![](https://img.shields.io/badge/FABFlex-arxiv2502.14934-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2502.14934)
-[![](https://img.shields.io/badge/FABFlex-openreview-red?style=plastic&logo=GitBook)](https://openreview.net/forum?id=iezDdA9oeB)
-
-[![](https://img.shields.io/github/stars/resistzzz/FABFlex?color=yellow&style=social)](https://github.com/resistzzz/FABFlex)
-[![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://drive.google.com/drive/folders/1WXhDX1wuYrvtwwEZyZakAy5lxpNcQ0A5) 
-[![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/14875959)
+# Academic Project Page Template
+This is an academic paper project page template.
 
 
-</div>
-
-Authors: Zizhuo Zhang, Lijun Wu<sup>† </sup>, Kaiyuan Gao, Jiangchao Yao, Tao Qin, Bo Han<sup>† </sup>
-
-![](https://github.com/resistzzz/FABFlex/blob/main/figures/model.png)
-
-## News
-🔥***Jan 2025***: *FABFlex is accepted by ICLR 2025! The training code, model checkpoint and preprocessed data for FABFlex are released in [FABFlex](https://github.com/resistzzz/FABFlex)!*
-
-🔥***Nov 2024***: *FABind+ is accepted by KDD 2025!*
-
-🔥***May 27 2024***: *The training code, model checkpoint and preprocessed data for FABind+ are released!*
-
-🔥***Apr 01 2024***: *Release our new version FABind+ with enhanced performance and sampling ability. Check the FABind+ paper on [arxiv](https://arxiv.org/abs/2403.20261). The corresponding codes will be released soon.*
-
-🔥***Mar 02 2024***: *Fix the bug of inference from custom complex caused by an incorrect loaded parameter and rdkit version. We also normalize the order of the atom for the writed mol file in post optimization. See more details in this [commit](https://github.com/QizhiPei/FABind/commit/840631ce7957ffb9d24c71b2aa0258c93a0088e7).*
-
-🔥***Jan 01 2024***: *Upload trained checkpoint into Google Drive.*
-
-🔥***Nov 09 2023***: *Move trained checkpoint from Github to HuggingFace.*
-
-🔥***Oct 10 2023***: *The trained FABind model and processed dataset are released!*
-
-🔥***Oct 11 2023***: *Initial commits. More codes, pre-trained model, and data are coming soon.*
-
-## About
-### Citations
-#### FABind
-```
-@inproceedings{pei2023fabind,
-  title={{FAB}ind: Fast and Accurate Protein-Ligand Binding},
-  author={Qizhi Pei and Kaiyuan Gao and Lijun Wu and Jinhua Zhu and Yingce Xia and Shufang Xie and Tao Qin and Kun He and Tie-Yan Liu and Rui Yan},
-  booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
-  year={2023},
-  url={https://openreview.net/forum?id=PnWakgg1RL}
-}
-```
-#### FABind+
-```
-@article{gao2024fabind+,
-  title={FABind+: Enhancing Molecular Docking through Improved Pocket Prediction and Pose Generation},
-  author={Gao, Kaiyuan and Pei, Qizhi and Zhu, Jinhua and Qin, Tao and He, Kun and Liu, Tie-Yan and Wu, Lijun},
-  journal={arXiv preprint arXiv:2403.20261},
-  year={2024}
-}
-```
-
-#### FABFlex
-```
-@inproceedings{
-  zhang2025fast,
-  title={Fast and Accurate Blind Flexible Docking},
-  author={Zizhuo Zhang and Lijun Wu and Kaiyuan Gao and Jiangchao Yao and Tao Qin and Bo Han},
-  booktitle={The Thirteenth International Conference on Learning Representations},
-  year={2025},
-  url={https://openreview.net/forum?id=iezDdA9oeB}
-}
-```
+Example project pages built using this template are:
+- https://www.vision.huji.ac.il/deepsim/
+- https://www.vision.huji.ac.il/3d_ads/
+- https://www.vision.huji.ac.il/ssrl_ad/
+- https://www.vision.huji.ac.il/conffusion/
 
 
-### Related
-[Awesome-docking](https://github.com/KyGao/awesome-docking/tree/main)
+## Start using the template
+To start using the template click on `Use this Template`.
 
-### Acknowledegments
-We appreciate [EquiBind](https://github.com/HannesStark/EquiBind), [TankBind](https://github.com/luwei0917/TankBind), [E3Bind](https://openreview.net/forum?id=sO1QiAftQFv), [DiffDock](https://github.com/gcorso/DiffDock) and other related works for their open-sourced contributions.
+The template uses html for controlling the content and css for controlling the style. 
+To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+
+**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+
+## Components
+- Teaser video
+- Images Carousel
+- Youtube embedding
+- Video Carousel
+- PDF Poster
+- Bibtex citation
+
+## Tips:
+- The `index.html` file contains comments instructing you what to replace, you should follow these comments.
+- The `meta` tags in the `index.html` file are used to provide metadata about your paper 
+(e.g. helping search engine index the website, showing a preview image when sharing the website, etc.)
+- The resolution of images and videos can usually be around 1920-2048, there rarely a need for better resolution that take longer to load. 
+- All the images and videos you use should be compressed to allow for fast loading of the website (and thus better indexing by search engines). For images, you can use [TinyPNG](https://tinypng.com), for videos you can need to find the tradeoff between size and quality.
+- When using large video files (larger than 10MB), it's better to use youtube for hosting the video as serving the video from the website can take time.
+- Using a tracker can help you analyze the traffic and see where users came from. [statcounter](https://statcounter.com) is a free, easy to use tracker that takes under 5 minutes to set up. 
+- This project page can also be made into a github pages website.
+- Replace the favicon to one of your choosing (the default one is of the Hebrew University). 
+- Suggestions, improvements and comments are welcome, simply open an issue or contact me. You can find my contact information at [https://pages.cs.huji.ac.il/eliahu-horwitz/](https://pages.cs.huji.ac.il/eliahu-horwitz/)
+
+## Acknowledgments
+Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
+
+## Website License
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
